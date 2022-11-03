@@ -360,7 +360,7 @@ body {
   grid-template-rows: none;
   grid-template-areas: "aside main";
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
+  font-size: calc(16px + 0.1vw);
 }
 body aside {
   grid-area: aside;
@@ -415,6 +415,12 @@ main header {
   align-items: center;
   gap: 20px;
 }
+main header h1 {
+  font-size: 32px;
+}
+main header h2 {
+  font-size: 24px;
+}
 main header h1, main header h2 {
   width: 90%;
 }
@@ -465,6 +471,9 @@ main section.login .controls button {
 main section.login .controls button:hover {
   opacity: 0.7;
 }
+main section.login .controls button:active {
+  color: black;
+}
 main section.login .controls a {
   font-weight: 500;
   color: #596D48;
@@ -509,14 +518,79 @@ form p input:focus {
 form p input:invalid {
   outline: 1px solid #bd2a2a;
 }
+form p input.initial {
+  outline: none;
+}
+form p input.error-confirm {
+  outline: 1px solid #bd2a2a;
+}
+form p #user_pwd.error-confirm + span::after {
+  content: "* Password do not match";
+  color: #bd2a2a;
+  font-size: 0.9rem;
+}
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: none;
     grid-template-areas: "aside" "main";
     max-height: none;
+  }
+  main header h1, main header h2 {
+    text-align: center;
+  }
+}
+@media (max-width: 1100px) and (max-width: 375px) {
+  main header h1 {
+    font-size: 28.8px;
+  }
+  main header h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1100px) {
+  main section.form h2 {
+    text-align: center;
+  }
+  main section.form .form-wraper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: normal;
+  }
+  main section.form .form-wraper form {
+    column-gap: 45px;
+  }
+}
+@media (max-width: 1100px) and (max-width: 750px) {
+  main section.form .form-wraper form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: center;
+  }
+}
+@media (max-width: 1100px) and (max-width: 375px) {
+  main section.form .form-wraper form {
+    width: 100%;
+  }
+}
+@media (max-width: 1100px) {
+  main section.login .controls {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: center;
+  }
+}
+@media (max-width: 1100px) and (max-width: 425px) {
+  main section.login .controls button {
+    width: 50%;
   }
 }
 

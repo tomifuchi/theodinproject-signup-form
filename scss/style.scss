@@ -16,7 +16,7 @@ body {
     ;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: $font-size;
+    font-size: calc($font-size + 0.1vw);
 }
 
 //Aside styling
@@ -59,6 +59,14 @@ main {
     header {
         @include flex($direction: column, $align: center);
         gap: 20px;
+        h1 {
+            font-size: $font-size * 2;
+        }
+
+        h2 {
+            font-size: $font-size * 1.5;
+        }
+
         h1, h2 {
             width: $content-width;
         }
@@ -102,6 +110,10 @@ main {
             
             button:hover {
                 opacity: 0.7;
+            }
+
+            button:active {
+                color: black;
             }
 
             a {
@@ -152,11 +164,26 @@ form {
         input:invalid {
             outline: 1px solid $input-outline-invalid;
         }
+
+        input.initial {
+            outline: none;
+        }
+
+
+        input.error-confirm {
+            outline: 1px solid $input-outline-invalid;
+        }
+
+        #user_pwd.error-confirm + span::after{
+            content: '* Password do not match';
+            color: $input-outline-invalid;
+            font-size: 0.9rem;
+        }
     }
 }
 
 //Mobile version
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     body {
         @include grid($column: 1fr);
        grid-template-areas:
@@ -166,9 +193,53 @@ form {
        max-height: none;
     }
 
-    aside {
-    }
+    main {
+        header {
+            h1, h2 {
+                text-align: center;
+            }
 
-    section.login {
+            @media (max-width: 375px) {
+                h1 {
+                    font-size: $font-size * 1.8;
+                }
+                h2 {
+                    font-size: $font-size * 1.5;
+                }
+            }
+        }
+
+        section.form {
+            h2 {
+                text-align: center;
+            }
+            .form-wraper {
+                @include flex($justify: center);
+
+                form {
+                    column-gap: 45px;
+
+                    @media (max-width: 750px) {
+                        @include flex($direction: column, $align: center);
+                    }
+
+                    @media (max-width: 375px){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        section.login {
+            .controls {
+                @include flex($direction: column, $align: center);
+
+                @media (max-width: 425px) {
+                    button {
+                        width: 50%;
+                    }
+                }
+            }
+        }
     }
 }
