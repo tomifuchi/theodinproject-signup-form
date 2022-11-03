@@ -1,0 +1,14 @@
+//The area behind the “ODIN” logo is a div that has a dark, 
+//but semi-transparent background color. This enhances the 
+//readability of the text against the busy background image.
+
+//Create account button color
+#596D48
+
+//Input border, try to include :invalid aswel
+#E5E7EB
+
+//The other variation is the selected input, which should have a blue 
+//border and subtle box-shadow. 
+//This can be done with the :focus pseudo-class you’ve 
+//learned about in an earlier lesson.

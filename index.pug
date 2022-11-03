@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="style.css")
+        title Document
+    body 
+        aside
+            img(src="./images/bg-main.jpg", alt="main background with leaves")
+            .logo
+                .logo-img 
+                 img(src="./images/odin-logo.png", alt="odin project logo")
+                p ODIN
+        main
+          header 
+            h1.
+                This is not a real online service! You know you need 
+                something like this in your life to help you realize your 
+                deepest dreams. Sign up <em>now</em> to get started. 
+            h2 You <em>know</em> you want to.
+
+          section.form
+            h2 Let's do this !
+            .form-wraper
+                form(action="" method="post" id="registration")
+                    p 
+                      label(for="user_fname") FIRST NAME
+                      input(type="text" id="user_fname" name="user_fname")
+                    p 
+                      label(for="user_lname") LAST NAME
+                      input(type="text" id="user_lname" name="user_lname")
+                    P 
+                      label(for="user_email") EMAIL<span arial-label="required">*</span>
+                      input(type="email" name="user_email" id="user_email" required)
+                    p
+                      label(for="user_pnumber") PHONE NUMBER
+                      input(type="tel" name="user_pnumber" id="user_pnumber" required)
+                    p
+                      label(for="user_pwd") PASSWORD
+                      input(type="password" name="user_pwd" id="user_pwd")
+                    p 
+                      label(for="user_confirm_pwd") CONFIRM PASSWORD
+                      input(type="password" name="user_confirm_pwd" id="user_confirm_pwd")
+
+          section.login
+            .controls
+                button(type="submit" form="registration") Create Account 
+                p.help Already have an account ? <a href="#"> Log in </a>
