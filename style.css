@@ -509,10 +509,10 @@ form p input {
   padding: 7px 7px 7px 10px;
 }
 form p input:hover {
-  outline: 1px solid #c8ccd5;
+  border: 1px solid #abb2bf;
 }
 form p input:focus {
-  outline: 1px solid #6385e3;
+  border: 1px solid #6385e3;
   box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
 }
 form p input:invalid {

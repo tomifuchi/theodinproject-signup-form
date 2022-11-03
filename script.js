@@ -1,11 +1,11 @@
 //Client side validation
+const user_email = document.getElementById('user_email');
+const user_pnumber = document.getElementById('user_pnumber');
 
 //The form itself
 const registration_form = document.getElementById('registration');
 registration_form.addEventListener('submit', validateForm);
 
-const user_email = document.getElementById('user_email');
-const user_pnumber = document.getElementById('user_pnumber');
 
 user_email.addEventListener('change', () => {
     user_email.classList.remove('initial');
